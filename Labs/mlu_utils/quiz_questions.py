@@ -141,21 +141,21 @@ lab4b_question1 = Quiz(
 
 lab5_question1 = Quiz(
     question={
-        "question": "Which of the following is NOT a supported image format for Claude3 models?", "options" : [
+        "question": "Which of the following is NOT a supported image format for Nova models?", "options" : [
             ".png",
-            ".mp4",
+            ".pdf",
             ".gif",
             ".jpg",
         ],
-        "correctIndex": 2,
+        "correctIndex": 1,
     }
 )
 
 lab5_question2 = Quiz(
     question={
-        "question": "Which statement is true when natively prompting Claude3 models with GIFs.", "options":[
+        "question": "Which statement is true when natively prompting Amazon Nova models with GIFs.", "options":[
             "Only the first frame is considered",
-            "GIFs are not supported by Claude3.",
+            "GIFs are not supported by Nova.",
             "The entire sequence of frames are natively considered",
             "Only the last frame is considered.",
         ],
