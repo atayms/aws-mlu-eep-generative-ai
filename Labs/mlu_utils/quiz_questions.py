@@ -132,7 +132,7 @@ lab4b_question1 = Quiz(
             "Chain-of-thought (CoT)",
             "Self-consistency",
             "Tree-of-thought (ToT)",
-            "Zro-shot prompting",
+            "Zero-shot prompting",
         ],
         "correctIndex": 2,
     }
@@ -141,19 +141,19 @@ lab4b_question1 = Quiz(
 
 lab5_question1 = Quiz(
     question={
-        "question": "Which of the following is NOT a supported image format for Nova models?", "options" : [
+        "question": "Which of the following is NOT a fully supported image format for Nova models?", "options" : [
             ".png",
-            ".pdf",
+            ".mp4",
             ".gif",
             ".jpg",
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
     }
 )
 
 lab5_question2 = Quiz(
     question={
-        "question": "Which statement is true when natively prompting Amazon Nova models with GIFs.", "options":[
+        "question": "Which statement is true when natively prompting Nova models with GIFs.", "options":[
             "Only the first frame is considered",
             "GIFs are not supported by Nova.",
             "The entire sequence of frames are natively considered",

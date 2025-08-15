@@ -5,6 +5,7 @@ import textwrap
 from typing import List, Dict, Union, Tuple
 
 import boto3
+import time
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image, ImageFile
@@ -40,9 +41,10 @@ def invoke_mistral(
     model: str = 'mistral.mistral-7b-instruct-v0:2',
     temperature: float = 0.0,
     max_tokens: int = 1000,
+    top_p: float = 0.9,
     stop_sequences: List[str] = [],
     n: int = 1
-) -> str:
+    ) -> str:
     """
     Invoke Mistral model with specified parameters.
     
@@ -96,11 +98,12 @@ def generate_text_titan(model_id: str, body: str) -> Dict:
         
     return response_body
 
-def invoke_titan(
+def invoke_nova(
     prompt: str,
-    model: str = "amazon.titan-text-lite-v1",
+    model_id: str = "amazon.nova-micro-v1:0",
     temperature: float = 0.0,
     max_tokens: int = 1000,
+    top_p: float = 0.9,
     stop_sequences: List[str] = [],
     n: int = 1
 ) -> str:
@@ -113,6 +116,33 @@ def invoke_titan(
     Returns:
         Generated text from the model
     """
+#########################
+    #print(">>>> run_inference: ", prompt, model_id, temperature, max_tokens, top_p, stop_sequences, n)
+    bedrock = boto3.client(service_name='bedrock-runtime', region_name='us-east-1')
+    
+    # Build the message to call Converse API
+    message_content = []
+    message_content.append({"text": prompt})
+
+    messages = [
+            {
+                "role": "user",
+                "content": message_content,
+            }
+      ]
+    inf_params = {"maxTokens": max_tokens, "topP": top_p, "temperature": temperature}
+    #print(">>>> messages", messages)
+    #print(">>>> top_p", top_p)
+    #print(">>>> inf_params", inf_params)
+    response = bedrock.converse(
+            modelId=model_id, messages=messages, inferenceConfig=inf_params
+    )
+    # Process and return the response
+
+    return response["output"]["message"]["content"][0]["text"]
+
+#######################
+'''    
     body = json.dumps({
         "inputText": prompt,
         "textGenerationConfig": {
@@ -125,12 +155,13 @@ def invoke_titan(
     
     response_body = generate_text_titan(model, body)
     return response_body['results'][0]['outputText']
-
+'''
 def run_inference(
     prompt: str,
     model: str,
     temperature: float,
     max_tokens: int = 1000,
+    top_p: float = 0.9,
     stop_sequences: List[str] = [],
     n: int = 1
 ) -> List[str]:
@@ -143,14 +174,17 @@ def run_inference(
     Returns:
         List of generated outputs
     """
+    #print(">>>> run_inference: ", prompt, model, temperature, max_tokens, top_p, stop_sequences, n)
     model_provider = model.split(".")[0]
     outputs = []
     
     for _ in range(n):
+        if n > 1:
+            time.sleep(10) # to mitigate throttling error. Try increasibng the number os seconds if the issue persists
         if model_provider == "mistral":
-            outputs.append(invoke_mistral(prompt, model, temperature, max_tokens, stop_sequences, n))
+            outputs.append(invoke_mistral(prompt, model, temperature, max_tokens, top_p, stop_sequences, n))
         else:
-            outputs.append(invoke_titan(prompt, model, temperature, max_tokens, stop_sequences, n))
+            outputs.append(invoke_nova(prompt, model, temperature, max_tokens, top_p, stop_sequences, n))
     
     return outputs
 
@@ -423,6 +457,7 @@ def generate_outputs(
     model: str,
     temperature: float,
     max_tokens: int = 1000,
+    top_p: float = 0.9,
     stop_sequences: List[str] = [],
     n: int = 1
 ) -> List[str]:
@@ -440,11 +475,13 @@ def generate_outputs(
     Returns:
         List of generated outputs
     """
+    #print(">>>> generate_output: ", prompt, model, temperature, max_tokens, top_p, stop_sequences, n)
     return run_inference(
         prompt,
         model,
         temperature,
         max_tokens,
+        top_p,
         stop_sequences,
         n
     )
