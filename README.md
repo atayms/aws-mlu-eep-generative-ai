@@ -46,7 +46,7 @@ Interactive Jupyter notebooks that include:
 
 **Note for JupyterLab Users**: The notebook's built-in Table of Contents may not work properly in JupyterLab. You can use the Table of Contents icon in the left sidebar to navigate through the current notebook content.
 
-![Table of Contents in JupyterLab](images/table_of_contents.png)
+<img src="images/table_of_contents.png" alt="Table of Contents in JupyterLab" width="500">
 
 Each lesson and its corresponding lab(s) are designed to be completed sequentially, building upon concepts from previous modules. All code examples are thoroughly documented and include explanatory comments to facilitate learning.
 
