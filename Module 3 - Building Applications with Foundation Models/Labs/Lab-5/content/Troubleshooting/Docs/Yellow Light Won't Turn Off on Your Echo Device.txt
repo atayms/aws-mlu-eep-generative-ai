@@ -1,0 +1,10 @@
+Yellow Light Won't Turn Off on Your Echo Device
+
+A flashing yellow light on your Echo device means that you have a notification or a message from an Alexa contact.
+
+
+If you see a flashing yellow light on your Echo device, try the following steps:
+
+- Say, "What notifications do I have?"
+- Say, "What messages do I have?"
+- Update your notification settings in the Alexa app.

@@ -1,0 +1,5 @@
+Update the Software on Your Echo Device
+
+Use Alexa to update to the latest software version for your Echo device.
+
+Say, "Check for software updates" to install software on your Echo device.

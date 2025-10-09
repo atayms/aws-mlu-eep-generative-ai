@@ -1,0 +1,9 @@
+Check Your Echo Device's Software Version
+
+View your current software version in the Alexa app.
+
+1. Open the Alexa app .
+2. Select Devices .
+3. Select your device.
+4. Select Device Settings .
+5. Select About to see your device's software version.

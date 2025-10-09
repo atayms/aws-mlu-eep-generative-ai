@@ -1,0 +1,8 @@
+Some things you can try when your Echo device has difficulty setting up.
+
+Most problems with device setup arise from a few common issues. If they come up, try the following.
+
+1. Check that your device has a strong internet connection.
+2. If your device setup uses the Alexa app, check that you have the latest version of the app.
+3. Restart your Echo device. Unplug it from power, wait 30 seconds, then plug it back in.
+4. If none of these steps help, or if you have problems registering the device, reset your Echo device to clear up most issues.

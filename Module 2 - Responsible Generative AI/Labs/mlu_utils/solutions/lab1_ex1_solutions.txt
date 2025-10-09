@@ -1,0 +1,49 @@
+
+text_email_date = "Of course you can contact me at james.fake.address@gmail.com. I will be available to meet from April 9 to April 16."
+text_missed_name = "My school has a Violet Rose enrolled."
+text_missed_number = "1722201593: I deleted the file."
+
+response = comprehend.detect_pii_entities(Text=text_email_date, LanguageCode="en")
+display(Markdown("### Example 1\nThis is an example with emails and dates detected."))
+print(text_email_date)
+display(Markdown("#### Response"))
+print(json.dumps(response["Entities"], indent=2))
+display(Markdown("#### Text detected"))
+bgn1 = int(json.dumps(response["Entities"][0]["BeginOffset"], indent=2))
+end1 = int(json.dumps(response["Entities"][0]["EndOffset"], indent=2))
+print(text_email_date[bgn1:end1])
+if len(response['Entities']) != 0:
+    bgn2 = int(json.dumps(response["Entities"][1]["BeginOffset"], indent=2))
+    end2 = int(json.dumps(response["Entities"][1]["EndOffset"], indent=2))
+    print(text_email_date[bgn2:end2]) 
+display(Markdown("---"))
+
+response = comprehend.detect_pii_entities(Text=text_missed_name, LanguageCode="en")
+display(Markdown('### Example 2\nThe name is not detected here.'))
+print(text_missed_name)
+display(Markdown("#### Response"))
+print(json.dumps(response["Entities"], indent=2))
+display(Markdown("#### Text not detected"))
+if len(response['Entities']) != 0:
+    bgn = int(json.dumps(response["Entities"][0]["BeginOffset"], indent=2))
+    end = int(json.dumps(response["Entities"][0]["EndOffset"], indent=2))
+    print(text_missed_name[bgn:end]) 
+display(Markdown("---"))
+
+response = comprehend.detect_pii_entities(
+    Text=text_missed_number,
+    LanguageCode="en"
+)
+display(
+    Markdown(
+        "### Example 3\nThe timestamp is misclassified since there is no context to the value."
+    )
+)
+print(text_missed_number)
+display(Markdown("#### Response"))
+print(json.dumps(response["Entities"], indent=2))
+display(Markdown("#### Text detected"))
+if len(response['Entities']) != 0:
+    bgn = int(json.dumps(response["Entities"][0]["BeginOffset"], indent=2))
+    end = int(json.dumps(response["Entities"][0]["EndOffset"], indent=2))
+    print(text_missed_number[bgn:end]) 

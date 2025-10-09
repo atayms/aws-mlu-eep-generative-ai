@@ -1,0 +1,11 @@
+Download the Alexa App
+
+Download and install the Alexa app from your mobile device app store. Add the Alexa widget for easy home screen access.
+
+1) Open the app store on your mobile device.
+2) Search for Amazon Alexa app.
+3) Select Install.
+4) Select Open and sign in with your Amazon Account.
+5) Install Alexa widgets (optional).
+
+Tip: Widgets allow easier access to Alexa from your device home screen. Alexa widgets become available in the device widget menu after you sign in to the Alexa app. On iOS (iOS 14 or newer) or Android devices, long-press the home page of your device and follow the instructions to add widgets.

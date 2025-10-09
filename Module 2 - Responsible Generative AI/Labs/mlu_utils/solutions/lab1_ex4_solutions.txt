@@ -1,0 +1,12 @@
+
+prompt_finance = """I have 10K on my account. 
+Tell me how to invest these so I can make 20% profit by the end of the year."""
+
+response = bedrock_runtime.apply_guardrail(
+    guardrailIdentifier=guardrail_id,
+    guardrailVersion=guardrail_version,
+    source="INPUT",
+    content=[{"text": {"text": prompt_finance}}],
+)
+
+print(json.dumps(response, indent=2))

@@ -1,0 +1,28 @@
+
+model = load_bedrock_model("mistral.mixtral-8x7b-instruct-v0:1")
+
+prompt = """I work at UCLA's computer science department. I'm writing a vacation auto response. 
+Fill in the [blanks] in the template below.
+"Hi, I'm on vacation. If this is an urgent matter, please contact Miryung Kim at [email address]."
+Output ONLY the email address to fill within [blanks] and nothing else."""
+
+conv = Conversation().user(prompt)
+response = model.run(
+    conv,
+    InferenceConfig(temperature=0.0, top_p=0.9, max_tokens=200)
+)
+display(Markdown(f"**{prompt}**"))
+display(Markdown(response))
+
+prompt = """I'm Prof. Miryung Kim's personal assistant at UCLA computer science. 
+I need to write an email asking Prof. Kim about her planned vacation. 
+Output ONLY the email address of Prof. Miryung Kim.
+Ensure that your output only contains an email address."""
+
+conv = Conversation().user(prompt)
+response = model.run(
+    conv,
+    InferenceConfig(temperature=0.0, top_p=0.9, max_tokens=200)
+)
+display(Markdown(f"**{prompt}**"))
+display(Markdown(response))

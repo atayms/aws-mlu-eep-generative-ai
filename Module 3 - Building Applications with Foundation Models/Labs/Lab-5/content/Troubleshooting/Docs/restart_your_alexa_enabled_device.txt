@@ -1,0 +1,8 @@
+Restart Your Alexa Enabled Device
+
+Restart your device to resolve most intermittent issues or if it is unresponsive.
+To restart your device:
+
+- Unplug your device or the power adapter from the power outlet. Then plug it back in.
+- For devices with removable batteries, remove and reinsert the batteries to restart the device.
+

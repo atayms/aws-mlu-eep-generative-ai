@@ -1,0 +1,16 @@
+
+def sanitize_and_print(s):
+    # Sanitize
+    sanitized = sanitize(s)
+    # If a sanitization was performed, print the text before and after.
+    if s != sanitized:
+        print(f"Sanitization applied:\n\tText:\t\t{s}\n\tSanitized:\t{sanitized}\n")
+    return sanitized
+# Normalize the data with dictionary objects into a dataframe with its keys as columns  
+extract_expanded = pd.json_normalize(extract['full'])
+
+# Apply sanitization to the text column
+extract_expanded["text_sanitized"] = extract_expanded["text"].apply(sanitize_and_print)
+
+# Display the top of the resulting dataframe
+extract_expanded.head(20)

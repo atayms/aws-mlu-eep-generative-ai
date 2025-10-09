@@ -1,0 +1,6 @@
+ Echo Show's Screen Has Lines or Does Not Turn On
+
+The device may display bright horizontal lines on the screen.
+To resolve most issues, restart your Echo device. These steps also work with Echo Spot.
+
+Unplug the power adapter from the device or the outlet. Wait 3 minutes and then plug it back in. If the issue persists, verify that you're using the power adapter that came with your device.

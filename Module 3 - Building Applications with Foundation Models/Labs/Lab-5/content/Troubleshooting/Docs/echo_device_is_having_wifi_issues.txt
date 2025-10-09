@@ -1,0 +1,21 @@
+ Echo Device Is Having Wi-Fi Issues
+
+Echo device can't connect to Wi-Fi or has intermittent connectivity issues.
+
+Tip: Try saying, “Are you connected to the internet?” Alexa will provide network diagnostics for compatible Alexa-enabled devices.
+
+Note: If your device loses its Internet connection and won't reconnect, first try to Restart Your Alexa Enabled Device. If that doesn't work, or if your device has intermittent connectivity issues, try the following steps to resolve most Wi-Fi issues:
+
+- Make sure that your Echo device is within 30 feet (or 10 meters) of your wireless router.
+- Check that your Echo device is away from any devices that cause interference (such as microwaves, baby monitors, or other electronic devices).
+- Check that your router is working. Check the connection with another device to determine if it’s an issue with your Echo device or with your network.
+    *If other devices can't connect, restart your Internet router and/or modem. While your network hardware restarts, unplug the power adapter from your Echo device for 3 seconds, then plug it back in. Make sure that you're using the included power adapter for your Echo device.
+    *If other devices are able to connect, check that you are using the correct Wi-Fi password. You can also try turning off some of your other devices temporarily to reduce interference and see if that affects your Echo device's ability to connect.
+- If you have several devices connected to your Wi-Fi network, turn some of them off temporarily. That way you can check if multiple connected devices are impacting your Echo device's ability to connect.
+- Check if your router has separate network names (also called SSID) for the 2.4 GHz and 5 GHz bands. If you have separate network names, try moving your device from one network to the other.
+    *For example, if your router has both "MyHome-2.4" and "MyHome-5" wireless networks. Disconnect from the network that you’re using (MyHome-2.4) and try to connect to the other one (MyHome-5).  
+- If your Wi-Fi password recently changed, Update the Wi-Fi Settings for Your Echo Device or Update the Wi-Fi Settings on Your Echo Show.
+- If your device is still having intermittent connection issues, Reset Your Echo Device.
+
+Tip: If you are experiencing connection issues on multiple devices, it might be a network issue. You can wait a few hours and try again in case of a network outage, or contact your Internet Service Provider.
+

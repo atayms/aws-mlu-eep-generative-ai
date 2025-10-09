@@ -1,0 +1,49 @@
+What Do the Lights on Your Echo Device Mean?
+
+The lights on your Echo device are how the device communicates its status.
+Tip: In many cases, just ask Alexa, "What does your light mean?"
+
+1) Yellow
+What it means:
+A slow yellow burst, every few seconds, means that Alexa has a message or notification, or there's a reminder you missed. Say, "What are my notifications?" or "What are my messages?"
+
+
+
+2) Cyan on blue
+What it means:
+A cyan spotlight on a blue ring means that Alexa is listening.
+The light ring glimmers briefly when Alexa has heard and is processing your request. A briefly glimmering blue light might also mean the device is receiving a software update.
+
+
+3) Red
+What it means:
+Solid red light shows when the microphone on/off button is pressed. That means the device microphone is disconnected and Alexa is not listening. Press it again to enable your microphone. On Echo devices with a camera, a red light bar means that your video will not be shared.
+
+
+4) Spinning cyan
+What it means:
+Slowly spinning teal and blue means that your device is starting up. If the device has not been set up, the light turns to orange when the device is ready for setup.
+Note: The device may restart due to a software update. In that case, slowly spinning teal and blue means that your device is restarting after the update is complete.
+
+
+5) Orange
+What it means:
+Your device is in setup mode, or is trying to connect to the Internet.
+
+
+6) Green
+What it means:
+A pulsing green light means that you're receiving a call on the device.
+If the green light is spinning, then your device is on an active call or an active Drop In.
+
+
+7) Purple
+What it means:
+When the Do Not Disturb feature is on, the light briefly shows purple after you make any request.
+During initial device setup, purple shows if there are Wi-Fi issues.
+
+
+8) White
+What it means:
+When you adjust device volume, white lights show the volume levels.
+A spinning white light means Alexa Guard is turned on and in Away mode. Return Alexa to Home mode in the Alexa app.

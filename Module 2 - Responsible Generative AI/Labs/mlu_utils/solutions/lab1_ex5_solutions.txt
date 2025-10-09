@@ -1,0 +1,75 @@
+
+# Update the guardrail to anonymize all PII types
+all_pii_types = [
+    "ADDRESS",
+    "AGE",
+    "AWS_ACCESS_KEY",
+    "AWS_SECRET_KEY",
+    "CA_HEALTH_NUMBER",
+    "CA_SOCIAL_INSURANCE_NUMBER",
+    "CREDIT_DEBIT_CARD_CVV",
+    "CREDIT_DEBIT_CARD_EXPIRY",
+    "CREDIT_DEBIT_CARD_NUMBER",
+    "DRIVER_ID",
+    "EMAIL",
+    "INTERNATIONAL_BANK_ACCOUNT_NUMBER",
+    "IP_ADDRESS",
+    "LICENSE_PLATE",
+    "MAC_ADDRESS",
+    "NAME",
+    "PASSWORD",
+    "PHONE",
+    "PIN",
+    "SWIFT_CODE",
+    "UK_NATIONAL_HEALTH_SERVICE_NUMBER",
+    "UK_NATIONAL_INSURANCE_NUMBER",
+    "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER",
+    "URL",
+    "USERNAME",
+    "US_BANK_ACCOUNT_NUMBER",
+    "US_BANK_ROUTING_NUMBER",
+    "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER",
+    "US_PASSPORT_NUMBER",
+    "US_SOCIAL_SECURITY_NUMBER",
+    "VEHICLE_IDENTIFICATION_NUMBER",
+]
+
+response = bedrock.update_guardrail(
+    guardrailIdentifier=guardrail_id,
+    name="MLU-guardrail-1",
+    blockedInputMessaging="Sorry, your input has been blocked.",
+    blockedOutputsMessaging="Sorry, your output has been blocked.",
+    sensitiveInformationPolicyConfig={
+        "piiEntitiesConfig": list(
+            map(lambda x: {"type": x, "action": "ANONYMIZE"}, all_pii_types)
+        ),
+    },
+)
+
+# Create a new version of the guardrail
+guardrail = bedrock.create_guardrail_version(
+    guardrailIdentifier=guardrail["guardrailId"],
+    description="Updated version",
+)
+
+guardrail_id = guardrail["guardrailId"]
+guardrail_version = guardrail["version"]
+
+print(f"Successfully created guardrail {guardrail_id} version {guardrail_version}")
+
+# Sleep for one second before applying the guardrail
+import time
+time.sleep(1)
+
+# Apply the guardrail on the same sentence as before.
+sentence = """James and Rose are my friends. 
+Ironically, they live at 31-33 James St, New York! You can contact them at 123-456-7890."""
+
+response = bedrock_runtime.apply_guardrail(
+    guardrailIdentifier=guardrail_id,
+    guardrailVersion=guardrail_version,
+    source="OUTPUT",
+    content=[{"text": {"text": sentence}}],
+)
+
+print(json.dumps(response["outputs"], indent=2))

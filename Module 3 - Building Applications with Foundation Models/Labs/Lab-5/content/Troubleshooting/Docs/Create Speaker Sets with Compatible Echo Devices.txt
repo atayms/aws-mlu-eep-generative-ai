@@ -1,0 +1,9 @@
+Create Speaker Sets with Compatible Echo Devices
+
+For stereo sound and improved music playback in the left and right channels, pair two supported Echo devices.
+
+1. Open the Alexa app .
+2. Select Devices .
+3. Select plus .
+4. Select Combine Speakers.
+5. Select Stereo Pair / subwoofer, and then follow the on-screen instructions.

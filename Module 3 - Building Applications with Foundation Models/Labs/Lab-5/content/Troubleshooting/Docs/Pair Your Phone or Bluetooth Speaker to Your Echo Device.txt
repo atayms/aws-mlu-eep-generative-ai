@@ -1,0 +1,12 @@
+ Pair Your Phone or Bluetooth Speaker to Your Echo Device
+
+Use the Alexa app to pair your phone or Bluetooth speaker with your Echo Device.
+
+1) Put your Bluetooth device in pairing mode.
+2) Open the Alexa app .
+3) Select Devices .
+4) Select your device.
+5) Select Device Settings .
+6) Select Bluetooth Devices, and then Pair A New Device.
+
+Next time you want to connect, enable Bluetooth on your phone or Bluetooth speaker and say, "Pair Bluetooth." Once the initial pairing is complete, certain Bluetooth devices may automatically reconnect to your Echo when in range.

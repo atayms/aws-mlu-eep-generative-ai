@@ -1,0 +1,20 @@
+
+def sanitize(text):
+    # Call Amazon Comprehend
+    resp = comprehend.detect_pii_entities(Text=text, LanguageCode="en")
+
+    # Initialize an empty string
+    sanitized = ""
+    index = 0
+
+    # For each entity,
+    for entity in resp["Entities"]:
+        start = entity["BeginOffset"]
+        end = entity["EndOffset"]
+        sanitized += text[index:start]
+        sanitized += f"[{entity['Type']}]"
+        index = end
+
+    # Copy the remainder of the source text
+    sanitized += text[index:]
+    return sanitized

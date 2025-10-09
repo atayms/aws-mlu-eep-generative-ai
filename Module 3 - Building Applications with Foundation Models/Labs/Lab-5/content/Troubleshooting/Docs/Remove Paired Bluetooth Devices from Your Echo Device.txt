@@ -1,0 +1,8 @@
+ Use the Alexa App to remove previously paired Bluetooth devices.
+
+1) Open the Alexa app .
+2) Select Devices .
+3) Select your device.
+4) Select Settings .
+5) Select Bluetooth Devices.
+6) Select the device you want to remove, and then select Forget Device. Repeat this step for each device you want to remove.

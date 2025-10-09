@@ -1,0 +1,15 @@
+Green Light Won't Turn Off on Your Echo Device
+
+A spinning or flashing green light on your Echo device means there's an incoming call or an active call or an active Drop In.
+
+Flashing Green Light:
+There is an incoming call on your Echo device.
+- Say, "Answer Call."
+
+Spinning Green Light:
+Your Echo device has an active call or Drop In ready for you. If you didn't expect a call or Drop In, try these things:
+
+- Say, "Hang Up."
+- Check your voice history to see if Alexa misheard you and started a call or Drop In.
+- Turn off Drop In.
+- Turn off Communications for specific Alexa devices.

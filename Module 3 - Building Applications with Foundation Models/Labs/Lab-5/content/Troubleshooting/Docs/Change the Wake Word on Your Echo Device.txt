@@ -1,0 +1,11 @@
+Change the Wake Word on Your Echo Device
+
+Use the Alexa app to set the name you call to start conversations with Alexa.
+
+1. Open the Alexa app .
+2. Select Devices "".
+3. Select your device.
+4. Select Device Settings , then select Wake Word.
+5. Select a wake word, then select OK.
+
+Tip: Changing the wake word only changes the wake word on the device you updated. You can set different wake words on your devices.

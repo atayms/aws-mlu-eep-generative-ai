@@ -1,0 +1,12 @@
+Setting Up Your Echo Device Before It Arrives Doesn't Work
+
+If you can't set up your device before it arrives, try these steps.
+
+If you're having trouble setting up your device before it arrives:
+
+- Make sure that you're logged into the correct Amazon account.
+- Use the Amazon account that ordered the device. If you're trying to set up a device for someone else, select Someone Else under Account Information when completing the setup steps.
+- Your device may not be eligible. Some devices, like kids' devices, can't be set up before they arrive.
+- Your order may not be eligible to be set up before it arrives.
+
+Note: This feature is not currently available on all Echo devices.

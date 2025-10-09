@@ -1,0 +1,20 @@
+Echo Device Low Power Mode
+
+Low Power Mode reduces energy consumption on your Echo smart speaker or smart display when it's idle, except in certain situations.
+
+When an Echo smart speaker or smart display is idle, it seeks energy efficiency gains through a suite of Low Power Mode optimizations to reduce its energy consumption. You do not need to manually turn Low Power Mode on or off. Your device exits Low Power Mode when you interact with it, including when you use the wake word, press any button, step in front of the camera (Echo Show devices only, when camera shutter is open and device is not muted), touch the display (Echo Show devices only), or change certain device settings using the Alexa app.
+
+Certain features or use cases prevent your devices from entering Low Power Mode. These include:
+- eero Built-in
+- Connecting your Echo device to an external speaker or device using an auxiliary cable.
+
+Other features or use cases prevent your devices from maximizing the energy efficiency gains from Low Power Mode in an idle state. These include:
+
+- Ultrasonic Motion Detection, for example, for use in Occupancy Routines or Alexa Together. For more information about Motion Detection, go to What Is Ultrasound Motion Detection?.
+- Active Smart Home connections.
+- Amazon Sidewalk.
+- Multi-room Music and Alexa Home Theater
+- Connecting your Echo device to an external speaker or device through Bluetooth.
+
+Also, certain conditions can impact the energy efficiency of your Echo devices. These conditions include: a noisy environment, an environment with unusual light level fluctuations, the mic/camera on/off button is turned off on your Echo Show device, the camera shutter is closed on your Echo Show device, your Echo Show is in Do Not Disturb mode, or having a nearby Echo device that hasn't completed setup.
+Note: Features and use cases listed may not be available in all countries or for all Echo devices

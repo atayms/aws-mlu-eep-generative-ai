@@ -1,0 +1,19 @@
+Reset Your Echo Dot (2nd, 3rd, 4th, or 5th Generations)
+
+If your device isn’t responding, and you’ve tried to restart it, reset your device.
+If your device is unresponsive, first restart your device. Unplug the power adapter from the device or the outlet and wait for 10 seconds. Plug it back in to restart it.
+
+To reset your device and keep your smart home connections:
+
+1) Press and hold the Action button for 20 seconds.
+2) Wait for the light ring to turn off and on again.
+3) Your device enters setup mode. For setup instructions, go to Set Up Your Echo Dot.
+
+To reset your device to its factory settings:
+
+1) Press and hold the Volume down and Microphone off buttons for 20 seconds.
+2) Wait for the light ring to turn off and on again.
+3) Your device enters setup mode. For setup instructions, go to Set Up Your Echo Dot.
+
+Note: This reset erases all your personal information and any device and smart home connections.
+Tip: If resetting your device isn’t helpful or you no longer want to use your device, Deregister Your Device from your Amazon account. Deregistering your device erases all device settings.

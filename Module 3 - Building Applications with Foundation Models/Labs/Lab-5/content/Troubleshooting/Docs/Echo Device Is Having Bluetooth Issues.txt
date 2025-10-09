@@ -1,0 +1,11 @@
+Echo Device Is Having Bluetooth Issues
+
+Your Echo device can't pair to Bluetooth or your Bluetooth connection drops.
+
+- Make sure your Echo device has the latest software update. Say, "Check for software updates."
+- Make sure that your Bluetooth device uses a supported Bluetooth profile. Alexa supports:
+    * Advanced Audio Distribution Profile (A2DP SNK)
+    * Audio/Video Remote Control Profile
+- Move your Bluetooth and Echo devices away from sources of possible interference (such as microwaves, baby monitors, and other wireless devices).
+- Make sure that your Bluetooth device is fully charged and close to your Echo device when pairing.
+- If you've previously paired your Bluetooth device, remove your paired Bluetooth device from Alexa. Then try pairing it again.

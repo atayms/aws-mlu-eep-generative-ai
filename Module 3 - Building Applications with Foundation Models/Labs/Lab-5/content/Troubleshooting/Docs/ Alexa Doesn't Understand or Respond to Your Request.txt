@@ -1,0 +1,15 @@
+ Alexa Doesn't Understand or Respond to Your Request
+
+Alexa doesn't respond or says she can't understand you.
+
+To fix issues with your Echo device not responding:
+
+1. Make sure you're using the power adapter that was included with your device.
+2. Make sure you have an active internet connection.
+3. Check that your device isn't muted. The light indicator is red when your device is muted.
+4. For devices without a screen: press the Action button to see if your Echo device responds.
+5. To make sure that Alexa hears you, move your device away from walls, other speakers, or background noise.
+6. Speak naturally and clearly.
+7. Rephrase your question or make it more specific. For example, there are many cities around the world called "Paris." If you want to know the weather in Paris, France, say, "What's the weather like in Paris, France?"
+8. Try saying, "Did you hear me?"
+9. Unplug your device and then plug it back in.

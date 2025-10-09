@@ -1,0 +1,14 @@
+Echo Device Can't Connect to Wi-Fi During Setup
+
+Your device won't connect to the Internet during setup.
+
+Try the following steps to resolve connection issues during setup:
+
+- Check that you have the latest version of the Alexa app.
+- If your Echo device has eero Built-in, follow Connect Your Echo Device to Your eero Network. You must have your eero Network installed first before connecting your Echo device to eero.
+- Try the tips listed in Echo Device Is Having Wi-Fi Issues.
+- Restart Your Alexa Enabled Device
+- If all the previous steps fail, Reset Your Echo Device.
+- Try setup again using your phone as a Wi-Fi hotspot.
+
+Tip: If you are experiencing connection issues on multiple devices, contact your Internet Service Provider.

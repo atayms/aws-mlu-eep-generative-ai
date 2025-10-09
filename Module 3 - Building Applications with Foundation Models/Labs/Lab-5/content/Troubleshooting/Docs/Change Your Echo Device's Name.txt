@@ -1,0 +1,9 @@
+Change Your Echo Device's Name
+
+Use the Alexa app to update your device's name.
+
+1. Open the Alexa app .
+2. Select Devices .
+3. Select your device.
+4. Select Edit Name.
+
