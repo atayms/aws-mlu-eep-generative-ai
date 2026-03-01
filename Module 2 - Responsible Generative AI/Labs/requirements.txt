@@ -1,4 +1,4 @@
-awscli==1.40.15
+awscli==1.44.38
 setuptools==70.0.0
 transformers
 torch
