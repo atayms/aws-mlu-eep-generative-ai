@@ -347,30 +347,6 @@ def get_base64_encoded_image(image_paths):
 
     return images, image_types
 
-def _detect_image_type_from_bytes(binary_data):
-    """Detect image format from file magic bytes. Returns type string or None.
-    Returns 'invalid' if the content is clearly not an image (HTML, XML, text, etc.)."""
-    if not binary_data or len(binary_data) < 8:
-        return 'invalid'
-    if binary_data[:8] == b'\x89PNG\r\n\x1a\n':
-        return 'png'
-    elif binary_data[:2] == b'\xff\xd8':
-        return 'jpeg'
-    elif binary_data[:4] == b'RIFF' and len(binary_data) > 12 and binary_data[8:12] == b'WEBP':
-        return 'webp'
-    elif binary_data[:6] in (b'GIF87a', b'GIF89a'):
-        return 'gif'
-    # Check if content is text-based (HTML, XML, JSON error pages, etc.)
-    stripped = binary_data.lstrip()[:500]
-    try:
-        text_start = stripped.decode('utf-8', errors='ignore').lower()
-        if any(marker in text_start for marker in ['<!doctype', '<html', '<head', '<body', '<?xml', '<error', '<message', '{"error']):
-            return 'invalid'
-    except Exception:
-        pass
-    return None
-
-
 def prepare_image(image_paths):
     """
     Prepare one or more image files or URLs into binary format.
@@ -389,62 +365,42 @@ def prepare_image(image_paths):
     # Convert input to list if it's a single string
     if isinstance(image_paths, str):
         image_paths = [image_paths]
-    
+
     images, image_types = [], []
 
     # Iterate over the image paths/URLs
     for path in image_paths:
         # Check if the path is a URL
-        if path.startswith("https://") or path.startswith("http://"):
-            response = requests.get(path, timeout=10)
+        if path.startswith("https://"):
+            response = requests.get(path)
             binary_data = response.content
-
-            # Detect actual format from the binary content (magic bytes)
-            image_type = _detect_image_type_from_bytes(binary_data)
-            if image_type == 'invalid':
-                # Try to show a snippet of what was returned for debugging
-                snippet = binary_data[:200].decode('utf-8', errors='replace')
-                raise ValueError(
-                    f"URL did not return a valid image (status {response.status_code}): {path}\n"
-                    f"Content starts with: {snippet}"
-                )
-            if image_type is None:
-                # Fall back to URL file extension
-                url_path = path.split("?")[0].lower()
-                if url_path.endswith('.png'):
-                    image_type = 'png'
-                elif url_path.endswith(('.jpg', '.jpeg')):
-                    image_type = 'jpeg'
-                elif url_path.endswith('.webp'):
-                    image_type = 'webp'
-                elif url_path.endswith('.gif'):
-                    image_type = 'gif'
-                else:
-                    image_type = 'jpeg'  # Default for unknown URL types
-
         # Otherwise, assume it's a file path
         else:
             with open(path, "rb") as image_file:
                 binary_data = image_file.read()
 
-            # Detect actual format from the binary content first
-            image_type = _detect_image_type_from_bytes(binary_data)
-            if image_type == 'invalid':
-                raise ValueError(f"File does not contain a valid image: {path}")
-            if image_type is None:
-                # Fall back to file extension
-                if path.endswith('.png'):
-                    image_type = 'png'
-                elif path.endswith(('.jpg', '.jpeg')):
-                    image_type = 'jpeg'
-                elif path.endswith('.webp'):
-                    image_type = 'webp'
-                elif path.endswith('.gif'):
-                    image_type = 'gif'
-                else:
-                    raise ValueError(
-                        "Only 'jpeg', 'png', 'webp', and 'gif' image formats are currently supported"
-                    )
+        # Determine the image type based on the file extension
+        if path.endswith('.png'):
+            image_type = 'png'
+        elif path.endswith('.jpg') or path.endswith('.jpeg'):
+            image_type = 'jpeg'
+        elif path.endswith('.webp'):
+            image_type = 'webp'
+        elif path.endswith('.gif'):
+            image_type = 'gif'
+        else:
+            # Detect format from image content using magic bytes
+            if binary_data[:8] == b'\x89PNG\r\n\x1a\n':
+                image_type = 'png'
+            elif binary_data[:3] == b'\xff\xd8\xff':
+                image_type = 'jpeg'
+            elif binary_data[:4] == b'RIFF' and binary_data[8:12] == b'WEBP':
+                image_type = 'webp'
+            elif binary_data[:4] == b'GIF8':
+                image_type = 'gif'
+            else:
+                # Default to jpeg as most web images are jpeg
+                image_type = 'jpeg'
 
         images.append(binary_data)
         image_types.append(image_type)
