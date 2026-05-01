@@ -18,7 +18,7 @@ class SimpleChatbot:
     - Clean, responsive UI
     """
     
-    def __init__(self, model_id="anthropic.claude-3-sonnet-20240229-v1:0", 
+    def __init__(self, model_id="amazon.nova-pro-v1:0", 
                  default_system_message="You are a helpful, friendly AI assistant. Be concise and clear in your responses.",
                  default_temperature=0,
                  default_max_tokens=1000):
@@ -315,7 +315,7 @@ class ChatbotwithPdfSupport:
     - Clean, responsive UI
     """
     
-    def __init__(self, model_id="anthropic.claude-3-sonnet-20240229-v1:0", 
+    def __init__(self, model_id="amazon.nova-pro-v1:0", 
                  default_system_message="You are a helpful, friendly AI assistant. Be concise and clear in your responses.",
                  default_temperature=0,
                  default_max_tokens=1000):

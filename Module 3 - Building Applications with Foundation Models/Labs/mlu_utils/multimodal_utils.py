@@ -362,11 +362,10 @@ def prepare_image(image_paths):
     Raises:
         ValueError: If an unsupported image format is encountered.
     """
-    #print("UTILS1 >>> image_paths", image_paths)
     # Convert input to list if it's a single string
     if isinstance(image_paths, str):
         image_paths = [image_paths]
-    
+
     images, image_types = [], []
 
     # Iterate over the image paths/URLs
@@ -379,19 +378,29 @@ def prepare_image(image_paths):
         else:
             with open(path, "rb") as image_file:
                 binary_data = image_file.read()
-        
-                # Determine the image type based on the file extension
-                if path.endswith('.png'):
-                    image_type = 'png'
-                elif path.endswith('.jpg') or path.endswith('.jpeg'):
-                    image_type = 'jpeg'
-                elif path.endswith('.webp'):
-                    image_type = 'webp'
-                elif path.endswith('.gif'):
-                    image_type = 'gif'
-                else:
-                    raise ValueError("Only 'jpeg', 'png', 'webp', and 'gif' image formats are currently supported")
-                    #print("\nOnly 'jpeg', 'png', 'webp', and 'gif' image formats are currently supported")
+
+        # Determine the image type based on the file extension
+        if path.endswith('.png'):
+            image_type = 'png'
+        elif path.endswith('.jpg') or path.endswith('.jpeg'):
+            image_type = 'jpeg'
+        elif path.endswith('.webp'):
+            image_type = 'webp'
+        elif path.endswith('.gif'):
+            image_type = 'gif'
+        else:
+            # Detect format from image content using magic bytes
+            if binary_data[:8] == b'\x89PNG\r\n\x1a\n':
+                image_type = 'png'
+            elif binary_data[:3] == b'\xff\xd8\xff':
+                image_type = 'jpeg'
+            elif binary_data[:4] == b'RIFF' and binary_data[8:12] == b'WEBP':
+                image_type = 'webp'
+            elif binary_data[:4] == b'GIF8':
+                image_type = 'gif'
+            else:
+                # Default to jpeg as most web images are jpeg
+                image_type = 'jpeg'
 
         images.append(binary_data)
         image_types.append(image_type)
