@@ -11,8 +11,6 @@ import matplotlib.pyplot as plt
 from PIL import Image, ImageFile
 from sklearn.decomposition import PCA
 from botocore.exceptions import ClientError
-from langchain.llms.bedrock import Bedrock
-from langchain.prompts import PromptTemplate
 from IPython.display import Markdown, display
 
 # Configure logging
